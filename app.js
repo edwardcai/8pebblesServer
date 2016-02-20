@@ -23,35 +23,35 @@ io.on('connection', function(socket){
 });
 
 app.get('/state0', function(req, res){
-	res.json({"Nick":message.charAt(0)});
+	res.json({"Nick":message.charCodeAt(0)-48});
 });
 
 app.get('/state1', function(req, res){
-	res.json({"Nick":message.charAt(1)});
+	res.json({"Nick":message.charCodeAt(0)-48});
 });
 
 app.get('/state2', function(req, res){
-	res.json({"Nick":message.charAt(2)});
+	res.json({"Nick":message.charCodeAt(0)-48});
 });
 
 app.get('/state3', function(req, res){
-	res.json({"Nick":message.charAt(3)});
+	res.json({"Nick":message.charCodeAt(0)-48});
 });
 
 app.get('/state4', function(req, res){
-	res.json({"Nick":message.charAt(4)});
+	res.json({"Nick":message.charCodeAt(0)-48});
 });
 
 app.get('/state5', function(req, res){
-	res.json({"Nick":message.charAt(5)});
+	res.json({"Nick":message.charCodeAt(0)-48});
 });
 
 app.get('/state6', function(req, res){
-	res.json({"Nick":message.charAt(6)});
+	res.json({"Nick":message.charCodeAt(0)-48});
 });
 
 app.get('/state7', function(req, res){
-	res.json({"Nick":message.charAt(7)});
+	res.json({"Nick":message.charCodeAt(0)-48});
 });
 
 
