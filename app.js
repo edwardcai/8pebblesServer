@@ -1,15 +1,22 @@
-var fs = require('fs')
-    , http = require('http')
-    , socketio = require('socket.io');
-var server = http.createServer(function(req, res) {
-    res.writeHead(200, { 'Content-type': 'text/html'});
-    res.end(fs.readFileSync(__dirname + '/index.html'));
-}).listen(8080, function() {
-    console.log('Listening at: http://localhost:8080');
+var app = require('express')();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+var path = require('path');
+
+app.get('/', function(req, res){
+  res.sendFile(__dirname + '/index.html');
 });
-socketio.listen(server).on('connection', function (socket) {
-    socket.on('message', function (msg) {
-        console.log('Message Received: ', msg);
-        socket.broadcast.emit('message', msg);
-    });
+
+app.get('/state', function(req, res){
+	res.json({"Nick":"Does This Work?"});
+});
+
+io.on('connection', function(socket){
+  socket.on('chat message', function(msg){
+    io.emit('chat message', msg);
+  });
+});
+
+http.listen(3000, function(){
+  console.log('listening on *:3000');
 });
