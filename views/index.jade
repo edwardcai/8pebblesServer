@@ -1,0 +1,19 @@
+html
+	head
+		link(href='css/bootstrap.min.css', rel='stylesheet')
+		script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
+		script(src='/socket.io/socket.io.js')
+
+	body
+		.jumbotron
+			.container
+				h1
+					|8 Pebbles
+		.container
+			canvas#myCanvas(width='800', height='500')
+			br
+			| Incoming Chat: 
+			ul#incomingChatMessages
+			br
+			input#outgoingChatMessage(type='text')
+	script(src="js/index.js")
