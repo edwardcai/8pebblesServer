@@ -8,21 +8,18 @@ html
 
 
 	body
-		.wrap
-			// SIDEBAR
-			.col-xs-4.sidebar
-				.sidebar-content
-						.container
-							.right
-								.div
-									p 8 Pebbles + 
-									p 1 Myo +
-									p 9 Phones =
-									p 6,000 Dollars for 
-									p 1 Chair
-									br
-									a(href="/why") ...why?
-			.col-xs-6
+		.wrapper
+			.sidebar
+				.right
+					.div
+							p 8 Pebbles + 
+							p 1 Myo +
+							p 9 Phones =
+							p 6,000 Dollars for 
+							p 1 Chair
+							br
+							a(href="/why") ...why?
+			.content
 					canvas#myCanvas(width='400', height='800')
 
 			div(style='clear:both')
