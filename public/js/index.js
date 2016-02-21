@@ -18,8 +18,8 @@ canvas.addEventListener('click', function(event) {
   	mouseY = event.layerY;
   }
 	for (i = 0; i < 8; i++) {
-		var x = ((i%2) * 120) + 50;
-		var y = (Math.floor(i/2) * 150) + 50;
+		var x = ((i%2) * 150) + 50;
+		var y = (Math.floor(i/2) * 180) + 50;
 		if (mouseX < x + 60 && mouseX > x && mouseY < y + 75 && mouseY > y)
 		{
 			var isFilled = (message.charAt(i) == '0')?"1":"0";
@@ -58,8 +58,8 @@ function drawCircles(message) {
 	ctx.clearRect(0,0,c.width, c.height);
 	for (i = 0; i < 8; i++) {
 		isFilled = (message.charAt(i) == '1');
-		var x = ((i%2) * 120) + 50;
-		var y = (Math.floor(i/2) * 150) + 50;
+		var x = ((i%2) * 150) + 50;
+		var y = (Math.floor(i/2) * 180) + 50;
 		drawCircle(x,y,isFilled);
 	}
 }

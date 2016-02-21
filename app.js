@@ -12,6 +12,7 @@ app.set('views', path.join(__dirname + '/views'));
 app.set('view engine', 'jade');
 
 app.get('/', function(req, res){
+  io.emit('message', message);
   res.render('index');
 });
 
