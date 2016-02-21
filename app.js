@@ -20,8 +20,12 @@ app.use(express.static(path.join(__dirname + '/public')));
 
 
 
-app.post('/', function(request, response) {
+app.post('/', function(request, response) {	
+		message = request.body.input;
+		io.emit('message', message);
 		console.log(request.body.input);
+		response.end('yes');
+
 });
 
 var message = "00000000"
