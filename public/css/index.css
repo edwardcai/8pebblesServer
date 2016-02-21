@@ -1,24 +1,32 @@
-.sidebar{
-		font-size: 5rem;
-    color: gray;
-		background-color: black;
-    background-repeat: repeat;
-    padding:0;
-    min-height:100% !important;
-    position:relative;
-   
+.wrapper
+{
+		min-height:100%;
+		width:100%;
+		position:relative;
+		display:inline-block;
 }
-html, body {height: 100%}
 
-.wrap{ height: 100%;}
+.sidebar
+ {
+	 font-size: 5rem;
+   color: gray;
+	 background-color: black;
+	 width:40%;
+	 top:0px;
+	 left:0px;
+	 bottom:0px;
+	 position:absolute;
+	 background-color:black;
+ }
+ .content
+ {
+		 min-height: 1000px;
+		 padding: 30px;
+		 width:60%;
+		 position:relative;
+		 float:right;
+ }
 
-.sidebar .sidebar-content{ 
-    height:100%;
-        width:100%;
-    padding: 5px;
-        margin:0;
-        position:relative;
-}
 
 .right {
     right: 0px;
