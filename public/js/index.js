@@ -9,9 +9,14 @@ var canvas = document.getElementById('myCanvas'),
 
 
 canvas.addEventListener('click', function(event) {
-	var mouseX = event.pageX - canvasLeft;
-	var mouseY = event.pageY - canvasTop;
-
+	if(event.offsetX) {
+  	mouseX = event.offsetX;
+  	mouseY = event.offsetY;
+  }
+  else if(event.layerX) {
+  	mouseX = event.layerX;
+  	mouseY = event.layerY;
+  }
 	for (i = 0; i < 8; i++) {
 		var x = ((i%2) * 120) + 50;
 		var y = (Math.floor(i/2) * 150) + 50;

@@ -29,31 +29,31 @@ app.get('/state0', function(req, res){
 });
 
 app.get('/state1', function(req, res){
-	res.json({"Nick":message.charCodeAt(0)-48});
+	res.json({"Nick":message.charCodeAt(1)-48});
 });
 
 app.get('/state2', function(req, res){
-	res.json({"Nick":message.charCodeAt(0)-48});
+	res.json({"Nick":message.charCodeAt(2)-48});
 });
 
 app.get('/state3', function(req, res){
-	res.json({"Nick":message.charCodeAt(0)-48});
+	res.json({"Nick":message.charCodeAt(3)-48});
 });
 
 app.get('/state4', function(req, res){
-	res.json({"Nick":message.charCodeAt(0)-48});
+	res.json({"Nick":message.charCodeAt(4)-48});
 });
 
 app.get('/state5', function(req, res){
-	res.json({"Nick":message.charCodeAt(0)-48});
+	res.json({"Nick":message.charCodeAt(5)-48});
 });
 
 app.get('/state6', function(req, res){
-	res.json({"Nick":message.charCodeAt(0)-48});
+	res.json({"Nick":message.charCodeAt(6)-48});
 });
 
 app.get('/state7', function(req, res){
-	res.json({"Nick":message.charCodeAt(0)-48});
+	res.json({"Nick":message.charCodeAt(7)-48});
 });
 
 

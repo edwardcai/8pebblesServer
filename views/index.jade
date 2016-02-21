@@ -2,14 +2,27 @@ doctype html
 html
 	head
 		link(href='css/bootstrap.min.css', rel='stylesheet')
+		link(href='css/index.css', rel='stylesheet')
 		script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
 		script(src='/socket.io/socket.io.js')
+
+
 	body
-		.jumbotron
-					.container
-						h1
-							|8 Pebbles
+		.wrap
+			// SIDEBAR
+			.col-xs-4.sidebar
+				.sidebar-content
+					.jumbotron
+						.container
+								h1 8 Pebbles
+								h1 1 Myo
+								h1 8 Phones
+								h1 6,000 Dollars
+			.col-xs-8
 				.container
 					canvas#myCanvas(width='800', height='800')
+
+			div(style='clear:both')
+
 	script(src='js/index.js')
 
