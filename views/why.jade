@@ -1,0 +1,58 @@
+html
+	head
+		link(href='css/bootstrap.min.css', rel='stylesheet')
+		link(href='css/index.css', rel='stylesheet')
+		script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
+		script(src='/socket.io/socket.io.js')
+
+
+	body
+		.wrap
+			// SIDEBAR
+			.col-xs-4.sidebar
+				.sidebar-content
+						.container
+							.right
+								p Why 
+								p would
+								p anybody
+								p make 
+								p this?
+			.col-xs-6
+				.container.center
+					h1 Who we Are
+					h3
+						| We are a group of 4 CMU students: Summer Kitihara, Nick Mu, Cody Yang, and Edward Cai
+
+					h1 The Idea
+					p
+						h3
+							| We started off the Hackathon with zero ideas and a love for Kanye, which resulted in our first
+							| idea: SavePablo, a health tracking app which automatically donates money to Kanye West if the user
+							| fails to meet their daily workout goals.
+					p
+						h3
+							| However, we got scared of the PayPal API and wanted to use hardware. Without any experience in
+							| hardware, we decided to start small, and experiment with a Mio armband. 17 hours into the 
+							| hackathon, we came up with the idea: a massage chair controlled with a Mio.
+					h1 Getting Carried Away
+					p
+						h3
+							| We rushed to the hardware checkout, thinking we'd just need a few vibration motors. Turns
+							| out they were fresh out of those. However, one organizer realized that they did have about
+							| 20 Pebble Watches, and a very inefficient use of Pebble technology was better than letting
+							| them sit around gathering dust.
+						h3
+							| So we had 8 Pebbles controlled solely through Bluetooth. Turns out they were also out of
+							| Bluetooth modules, which meant we needed 8 smartphones to connect with them (in addition
+							| to the smartphone we used for the Mio), which meant we needed a way for the Mio armband
+							| to communicate to 8 smartphones at a time.
+						h3
+							| 8 Pebble Watches, 1 Mio Armband, 9 Smartphones,  an old chair, an Android app, a Pebble app, 
+							| and a Node.js webserver later, we present our $6000 Massage Chair
+
+
+			div(style='clear:both')
+
+	script(src='js/index.js')
+
