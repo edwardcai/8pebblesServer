@@ -16,7 +16,9 @@ app.use(express.static(path.join(__dirname + '/public')));
 var message = "00000000"
 
 io.on('connection', function(socket){
+  io.emit('message', message);
   socket.on('message', function(msg){
+  	console.log(msg);
     io.emit('message', msg);
 		message = msg;
   });

@@ -1,22 +1,46 @@
+var message = "";
+var socket = io();
+
+var canvas = document.getElementById('myCanvas'),
+    canvasLeft = canvas.offsetLeft,
+    canvasTop = canvas.offsetTop,
+    ctx = canvas.getContext('2d'),
+    elements = [];
+
+
+canvas.addEventListener('click', function(event) {
+	var mouseX = event.pageX - canvasLeft;
+	var mouseY = event.pageY - canvasTop;
+
+	for (i = 0; i < 8; i++) {
+		var x = ((i%2) * 120) + 50;
+		var y = (Math.floor(i/2) * 150) + 50;
+		if (mouseX < x + 60 && mouseX > x && mouseY < y + 75 && mouseY > y)
+		{
+			var isFilled = (message.charAt(i) == '0')?"1":"0";
+			message = message.substring(0, i) + isFilled + message.substring(i+1, 8);
+			socket.emit('message', message);
+		}	
+	}
+}, false);
+
 function drawCircle(x,y,isFilled) {
-	var c = document.getElementById("myCanvas");
-	var ctx = c.getContext("2d");
 	ctx.beginPath();
 	ctx.lineWidth = 20;
 	ctx.beginPath();
-	ctx.rect(x-5, y-5, 60, 75);
+	ctx.rect(x, y, 60, 75);
 	ctx.fillStyle = "black";
 	ctx.fill();
 
 	ctx.beginPath();
-	ctx.rect(x+2,y+2,46,61);
+	ctx.rect(x+7,y+7,46,61);
 	ctx.fillStyle = "white";
 	if (isFilled) {ctx.fillStyle = "red";}
 	ctx.fill();
 
 	ctx.beginPath();
-	ctx.rect(x+5,y+75,40,20);
-	ctx.rect(x+5,y-30,40,20);
+	ctx.rect(x+10,y+80,40,20);
+	ctx.rect(x+10,y-25,40,20);
 	ctx.fillStyle = "gray";
 	ctx.fill();
 
@@ -39,12 +63,7 @@ $(function(){
 	drawCircles("00000000");
 });
 
-var socket = io();
-$('form').submit(function(){
-	socket.emit('message', $('#m').val());
-	$('#m').val('');
-	return false;
-});
 socket.on('message', function(msg){
+	message = msg;
 	drawCircles(msg);
 });
