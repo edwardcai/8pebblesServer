@@ -1,8 +1,12 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var path = require('path');
+
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 app.set('views', path.join(__dirname + '/views'));
 app.set('view engine', 'jade');
@@ -12,6 +16,12 @@ app.get('/', function(req, res){
 });
 
 app.use(express.static(path.join(__dirname + '/public')));
+
+
+
+app.post('/', function(request, response) {
+		console.log(request.body.input);
+});
 
 var message = "00000000"
 
